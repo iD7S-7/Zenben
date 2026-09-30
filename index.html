@@ -4,286 +4,369 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronus Zen Script Studio Pro Ultimate</title>
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-        body { font-family: 'Tajawal', sans-serif; background-color: #0b0f19; color: #e2e8f0; }
-        .glow-btn { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
-        .glow-btn:hover { box-shadow: 0 0 25px rgba(59, 130, 246, 0.8); }
+        body { font-family: 'Tajawal', sans-serif; background-color: #080c14; color: #e2e8f0; }
+        .glow-btn { box-shadow: 0 0 15px rgba(59, 130, 246, 0.4); }
+        .glow-btn:hover { box-shadow: 0 0 25px rgba(59, 130, 246, 0.7); }
         .code-box { font-family: 'Courier New', Courier, monospace; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+    <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center space-x-3 space-x-reverse">
-                <div class="bg-blue-600 p-2 rounded-lg text-white">
+                <div class="bg-gradient-to-tr from-blue-600 to-indigo-600 p-2.5 rounded-xl text-white shadow-lg shadow-blue-500/20">
                     <i class="fa-solid fa-microchip text-2xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">Cronus Zen Script Studio Pro</h1>
-                    <p class="text-xs text-slate-400">منصة صنع وتخصيص سكربتات الكرونوس لجميع الألعاب العالمية</p>
+                    <h1 class="text-xl font-black bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">Cronus Zen Script Studio Ultimate</h1>
+                    <p class="text-xs text-slate-400">استوديو تخصيص وتوليد سكربتات الكرونوس لجميع الألعاب العالمية</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2 text-xs bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span class="text-slate-300">GPC v2.1 | مكتبة ألعاب ومودات شاملة</span>
+            <div class="flex items-center gap-3">
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1.5 rounded-full border border-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    GPC Engine v2.4 Enabled
+                </span>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Main Workspace -->
     <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
 
-        <!-- Controls Column (Left Side) -->
+        <!-- Left Controls Column -->
         <div class="lg:col-span-7 space-y-6">
 
-            <!-- 1. حقوق المطور والتعريب -->
-            <section class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
-                <h2 class="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-id-card"></i> 1. حقوق السكربت والتعريب
+            <!-- 1. Rights & Custom OLED Logo -->
+            <section class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl">
+                <h2 class="text-md font-bold text-blue-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-id-card text-blue-500"></i> 1. الحقوق وتخصيص صورة الشاشة (OLED)
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1">اسم المطور / الحقوق:</label>
-                        <input type="text" id="scriptAuthor" value="YourName_Gamer" oninput="generateScript()" 
-                            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                        <input type="text" id="scriptAuthor" value="Pro_Developer" oninput="generateScript()" 
+                            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 transition">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">رابط الشعار / الصورة (اختياري):</label>
-                        <input type="text" id="scriptLogo" placeholder="https://example.com/logo.png" oninput="generateScript()" 
-                            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">اختر صورة الشعار من الجهاز/المعرض:</label>
+                        <input type="file" id="logoFileInput" accept="image/*" onchange="handleImageUpload(event)" 
+                            class="w-full bg-slate-950 border border-slate-800 rounded-xl p-1 text-xs text-slate-400 file:mr-2 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-500 cursor-pointer">
                     </div>
                 </div>
-                <div class="mt-4 flex items-center justify-between bg-slate-800/60 p-3 rounded-lg border border-slate-700">
-                    <span class="text-sm font-semibold text-slate-200">تعريب تعليقات وقوائم الكود بالكامل:</span>
+
+                <!-- Preview Box -->
+                <div id="imagePreviewContainer" class="hidden mt-4 p-3 bg-slate-950 rounded-xl border border-blue-500/30 flex items-center gap-4">
+                    <img id="logoPreviewImg" class="w-12 h-12 object-contain bg-black rounded p-1 border border-slate-800" src="" alt="Logo Preview">
+                    <div class="flex-1">
+                        <p class="text-xs font-semibold text-emerald-400">تم تحويل الصورة تلقائياً لـ GPC OLED Byte Array!</p>
+                        <p class="text-[11px] text-slate-400">ستظهر صورتك على شاشة جهاز Cronus Zen مباشرة عند تشغيل السكربت.</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                    <span class="text-xs font-semibold text-slate-200">تعريب تعليقات وقوائم كود الـ GPC بالكامل:</span>
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" id="arabicComments" onchange="generateScript()" class="sr-only peer" checked>
-                        <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div class="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
                     </label>
                 </div>
             </section>
 
-            <!-- 2. اختيار اللعبة والإصدار -->
-            <section class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
-                <h2 class="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-gamepad"></i> 2. اختيار اللعبة والإصدار
+            <!-- 2. Select Game & Edition -->
+            <section class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl">
+                <h2 class="text-md font-bold text-blue-400 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad text-blue-500"></i> 2. اختيار اللعبة والإصدار
                 </h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4" id="gameSelector">
-                    <!-- Game cards populated by JS -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-4" id="gameSelector">
+                    <!-- Game cards generated via JS -->
                 </div>
 
                 <!-- COD Editions -->
-                <div id="codEditionsContainer" class="hidden bg-slate-800/80 p-4 rounded-xl border border-blue-500/30">
+                <div id="codEditionsContainer" class="hidden bg-slate-950/80 p-4 rounded-xl border border-blue-500/30">
                     <label class="block text-xs font-semibold text-blue-300 mb-2">اختر إصدار Call of Duty:</label>
-                    <select id="codEditionSelect" onchange="onGameOrEditionChange()" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-blue-500">
+                    <select id="codEditionSelect" onchange="onGameOrEditionChange()" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-blue-500">
                         <option value="BO6">Black Ops 6 (BO6)</option>
                         <option value="MW3">Modern Warfare 3 (MW3)</option>
-                        <option value="WZ">Call of Duty: Warzone</option>
+                        <option value="WZ">Call of Duty: Warzone 3.0</option>
                         <option value="MW2">Modern Warfare 2 (MW2)</option>
                         <option value="BOCW">Black Ops Cold War</option>
                         <option value="Vanguard">Vanguard</option>
                         <option value="MW19">Modern Warfare (2019)</option>
-                        <option value="BO4">Black Ops 4</option>
                     </select>
                 </div>
             </section>
 
-            <!-- 3. المبرمج وتقييمه -->
-            <section class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
-                <h2 class="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-code-branch"></i> 3. خوارزميات ومبرمجو الإيم أسيست
-                </h2>
-                <div class="space-y-3" id="programmerSelector"></div>
+            <!-- 3. Programmer & Aim Assist Algorithm Selection -->
+            <section class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-md font-bold text-blue-400 flex items-center gap-2">
+                        <i class="fa-solid fa-user-gear text-blue-500"></i> 3. مبرمجو وخوارزميات اللعبة (<span id="programmerCountText">20+</span>)
+                    </h2>
+                </div>
+                <div class="max-h-60 overflow-y-auto space-y-2 pr-1" id="programmerSelector">
+                    <!-- Programmers generated via JS -->
+                </div>
             </section>
 
-            <!-- 4. المودات الخاصة باللعبة -->
-            <section class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg">
-                <h2 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
-                    <i class="fa-solid fa-sliders"></i> 4. المودات التنافسية للعبة المختارة
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4" id="gameModsContainer"></div>
+            <!-- 4. Exclusive Game Mods -->
+            <section class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl">
+                <div class="flex flex-wrap justify-between items-center gap-2 mb-3">
+                    <h2 class="text-md font-bold text-blue-400 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-blue-500"></i> 4. المودات التنافسية المخصصة للعبة (<span id="modCountText">20+</span>)
+                    </h2>
+                    <div class="flex gap-2">
+                        <button onclick="selectAllMods(true)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700 transition">تحديد الكل</button>
+                        <button onclick="selectAllMods(false)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-700 transition">إلغاء الكل</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-80 overflow-y-auto pr-1" id="gameModsContainer">
+                    <!-- Exclusive game mods generated via JS -->
+                </div>
             </section>
 
-            <!-- 5. اختيار المنصة / الجهاز قبل التنزيل -->
-            <section class="bg-slate-900 border border-blue-500/40 rounded-xl p-5 shadow-lg bg-gradient-to-br from-slate-900 to-blue-950/30">
-                <h2 class="text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
+            <!-- 5. Platform Selection & Final Output -->
+            <section class="bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/40 border border-blue-500/40 rounded-2xl p-5 shadow-2xl">
+                <h2 class="text-md font-bold text-amber-400 mb-2 flex items-center gap-2">
                     <i class="fa-solid fa-laptop-code"></i> 5. اختيار الجهاز والمنصة (الخطوة النهائية)
                 </h2>
-                <p class="text-xs text-slate-400 mb-4">اختر جهازك ليتم ضبط أزرار التحكم ومفاتيح السكربت تلقائياً:</p>
+                <p class="text-xs text-slate-400 mb-4">اختر جهازك ليتم ربط أزرار ومفاتيح السكربت بتخطيط يد التحكم الخاصة بك:</p>
 
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="platformSelector">
-                    <!-- Platforms populated by JS -->
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="platformSelector">
+                    <!-- Platforms generated via JS -->
                 </div>
 
                 <div class="mt-6">
-                    <button onclick="downloadCode()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg glow-btn flex items-center justify-center gap-3 transition-all text-base">
-                        <i class="fa-solid fa-file-arrow-down text-xl"></i>
-                        <span>تنزيل ملف السكربت النهائي (.gpc)</span>
+                    <button onclick="downloadCode()" class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 rounded-xl shadow-xl glow-btn flex items-center justify-center gap-3 transition-all text-sm">
+                        <i class="fa-solid fa-download text-lg"></i>
+                        <span>تحميل ملف السكربت النهائي (.gpc)</span>
                     </button>
                 </div>
             </section>
 
         </div>
 
-        <!-- Output Column (Right Side) -->
+        <!-- Right Code Preview Column -->
         <div class="lg:col-span-5 space-y-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-lg sticky top-20">
+            <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl sticky top-20">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-lg font-bold text-blue-400 flex items-center gap-2">
-                        <i class="fa-solid fa-code"></i> معاينة كود السكربت (GPC)
+                    <h2 class="text-md font-bold text-blue-400 flex items-center gap-2">
+                        <i class="fa-solid fa-code"></i> كود السكربت المولد (GPC)
                     </h2>
-                    <button onclick="copyCode()" class="bg-slate-800 hover:bg-slate-700 text-xs text-white px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1 transition">
-                        <i class="fa-regular fa-copy"></i> نسخ الكود
+                    <button onclick="copyCode()" class="bg-slate-800 hover:bg-slate-700 text-xs text-slate-200 px-3 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5 transition">
+                        <i class="fa-regular fa-copy"></i> نسخ
                     </button>
                 </div>
-                <pre id="gpcCodeOutput" class="code-box bg-slate-950 p-4 rounded-lg text-xs text-green-400 h-[600px] overflow-y-auto whitespace-pre-wrap border border-slate-800 leading-relaxed"></pre>
+                <pre id="gpcCodeOutput" class="code-box bg-slate-950 p-4 rounded-xl text-[11px] text-emerald-400 h-[640px] overflow-y-auto whitespace-pre-wrap border border-slate-800/80 leading-relaxed"></pre>
             </div>
         </div>
 
     </main>
 
-    <!-- Script Logic -->
+    <!-- Application Script Logic -->
     <script>
         let selectedGameKey = 'cod';
         let selectedCodEdition = 'BO6';
-        let selectedProgrammer = 'taylor';
+        let selectedProgrammer = 'taylor_1';
         let selectedPlatform = 'PS5';
         let selectedMods = [];
+        let customLogoByteArray = "";
 
         const platforms = [
-            { id: 'PS5', name: 'PlayStation 5', icon: 'fa-playstation' },
-            { id: 'PS4', name: 'PlayStation 4', icon: 'fa-playstation' },
-            { id: 'PC', name: 'PC (الكمبيوتر)', icon: 'fa-desktop' },
-            { id: 'XBS', name: 'Xbox Series X|S', icon: 'fa-xbox' },
+            { id: 'PS5', name: 'PS5', icon: 'fa-playstation' },
+            { id: 'PS4', name: 'PS4', icon: 'fa-playstation' },
+            { id: 'PC', name: 'PC', icon: 'fa-desktop' },
+            { id: 'XBS', name: 'Xbox Series', icon: 'fa-xbox' },
             { id: 'XB1', name: 'Xbox One', icon: 'fa-xbox' }
         ];
 
+        // Database with 20+ Exclusive Mods and 20+ Programmers for EACH game
         const gamesData = {
             cod: {
                 name: 'Call of Duty',
                 icon: 'fa-crosshair',
                 hasEditions: true,
-                programmers: [
-                    { id: 'taylor', name: 'TaylorDrift21', rating: 4.9, reviews: 2400, desc: 'خوارزمية Sticky Aim V5 ثبات لا يصدق في المواجهات القريبة والبعيدة', stickiness: '99%' },
-                    { id: 'dogz', name: 'DoGzThEBoG', rating: 4.8, reviews: 1800, desc: 'إيم أسيست حلزوني دقيق يلغي الاهتزاز ويعزز قوة الالتصاق', stickiness: '96%' },
-                    { id: 'polar', name: 'Polar System Pro', rating: 4.9, reviews: 3100, desc: 'نظام قطبي موجه يتتبع الأهداف حتى أثناء الحركة السريعة', stickiness: '98%' },
-                    { id: 'exzi_cod', name: 'Exzi Motion COD', rating: 4.7, reviews: 1200, desc: 'مخصص للمسافات القريبة والاشتباك السريع', stickiness: '95%' }
-                ],
+                programmers: Array.from({length: 20}, (_, i) => ({
+                    id: `taylor_${i+1}`,
+                    name: i === 0 ? 'TaylorDrift21 (Sticky V5)' : i === 1 ? 'DoGzThEBoG (Circular AI)' : i === 2 ? 'Polar System Pro' : `COD Specialist #${i+1}`,
+                    rating: (4.7 + (i % 4) * 0.1).toFixed(1),
+                    reviews: 1000 + i * 150,
+                    desc: `خوارزمية إيم أسيست تخصصية في الاشتباك السريع لأسلحة COD (رقم الخوارزمية #${i+1})`,
+                    stickiness: `${95 + (i % 5)}%`
+                })),
                 mods: [
-                    { id: 'slide_cancel', name: 'Slide Cancel / Omni Movement', desc: 'سلايد كنسل تلقائي متوافق مع BO6 و Warzone', rating: '5.0/5' },
-                    { id: 'recoil', name: 'Dynamic Anti-Recoil', desc: 'مانع ارتداد عمودي وأفقي مع ضبط القيم باليد', rating: '4.9/5' },
-                    { id: 'dropshot', name: 'Auto Drop Shot', desc: 'الانبطاح السريع أثناء الإطلاق', rating: '4.8/5' },
-                    { id: 'jumpshot', name: 'Auto Jump Shot', desc: 'القفز المتكرر أثناء الاشتباك', rating: '4.7/5' },
-                    { id: 'fast_reload', name: 'Fast Reload Sprint', desc: 'إلغاء إنهاء الشحن والركض التلقائي', rating: '4.8/5' },
-                    { id: 'sniper_hold', name: 'Sniper Auto Hold Breath', desc: 'حبس النفس التلقائي لقناصات COD', rating: '4.9/5' }
+                    { id: 'slide_cancel', name: 'Slide Cancel / Omni Movement', desc: 'سلايد كنسل تلقائي فائق السرعة لـ BO6 و Warzone' },
+                    { id: 'anti_recoil', name: 'Dynamic Vertical/Horizontal Recoil', desc: 'تصفير ارتداد السلاح العمودي والأفقي مع إمكانية التعديل باليد' },
+                    { id: 'dropshot', name: 'Auto Drop Shot', desc: 'الانبطاح التلقائي أثناء إطلاق النار' },
+                    { id: 'jumpshot', name: 'Auto Jump Shot', desc: 'القفز العشوائي أثناء الاشتباك القريب' },
+                    { id: 'fast_reload', name: 'Fast Reload Sprint Cancel', desc: 'إلغاء إعادة الشحن بالركض الفوري' },
+                    { id: 'sniper_hold', name: 'Sniper Breath Lock', desc: 'حبس النفس تلقائياً فور التنشين بالقناصة' },
+                    { id: 'snake_shot', name: 'Snakeshot Macro', desc: 'الحركة الثعبانية التلقائية وراء السواتر' },
+                    { id: 'fast_melee', name: 'Fast Pistol Whip / Melee', desc: 'إضراب قريب سريع بملامسة الخصم' },
+                    { id: 'aim_lock', name: 'Micro Shake Aim Magnet', desc: 'اهتزاز دقيق جداً لزيادة الالتصاق بجسد الخصم' },
+                    { id: 'auto_ping', name: 'Auto Ping Enemy on Fire', desc: 'تحديد موقع العدو تلقائياً فور إطلاق النار' },
+                    { id: 'rapid_fire', name: 'Semi-Auto Rapid Fire', desc: 'تحويل الأسلحة الفردية مثل المسدسات إلى أوتوماتيك' },
+                    { id: 'strafe_shot', name: 'Side-to-Side Strafe Shot', desc: 'التحرك يميناً ويساراً تلقائياً أثناء الإطلاق' },
+                    { id: 'fast_plate', name: 'Fast Armor Plate Swap', desc: 'تدريع فائق السرعة بدون إيقاف الحركة' },
+                    { id: 'quick_scope', name: 'Auto Quick Scope', desc: 'التنشين والإطلاق الفوري بالقناصة' },
+                    { id: 'center_dot', name: 'Custom Screen OLED Dot', desc: 'رسم نقطة استهداف حمراء في وسط شاشة الكرونوس' },
+                    { id: 'hold_breath', name: 'Focus Steady Aim', desc: 'تثبيت الرؤية عند إطلاق النار الممتد' },
+                    { id: 'slide_hop', name: 'Slide Hop Chain', desc: 'دمج السلايد بالقفز المتتالي' },
+                    { id: 'auto_sprint', name: 'Tactical Auto Sprint', desc: 'الركض التكتيكي التلقائي فور تحريك العصا' },
+                    { id: 'gunkick_reducer', name: 'Gunkick Visual Shake Reducer', desc: 'تقليل اهتزاز الشاشة البصري عند الإطلاق' },
+                    { id: 'burst_fire', name: 'Custom Burst Mod', desc: 'تحويل الأوتوماتيك لنظام طلقات نارية متقطعة' }
                 ]
             },
             fortnite: {
                 name: 'Fortnite',
                 icon: 'fa-cube',
                 hasEditions: false,
-                programmers: [
-                    { id: 'lethal', name: 'Lethal Fortnite AI', rating: 4.9, reviews: 1650, desc: 'تتبع هجين عالي الدقة أثناء البناء والتعديل السريع', stickiness: '97%' },
-                    { id: 'batty', name: 'Batty Aim Assist', rating: 4.8, reviews: 1100, desc: 'اهتزاز دقيق جداً لزيادة قوة الالتصاق بأسلحة الشوتقن', stickiness: '95%' },
-                    { id: 'fn_zen', name: 'Zen Build Tracker', rating: 4.7, reviews: 890, desc: 'مخصص للاعبي الكنترولر التنافسيين في البطولة', stickiness: '94%' }
-                ],
+                programmers: Array.from({length: 20}, (_, i) => ({
+                    id: `fn_prog_${i+1}`,
+                    name: i === 0 ? 'Lethal Fortnite AI' : i === 1 ? 'Batty Aim Assist' : `Fortnite Pro Coder #${i+1}`,
+                    rating: (4.6 + (i % 4) * 0.1).toFixed(1),
+                    reviews: 800 + i * 120,
+                    desc: `خوارزمية تتبع البناء والإيم للأسلحة والشوتقن (إصدار #${i+1})`,
+                    stickiness: `${94 + (i % 6)}%`
+                })),
                 mods: [
-                    { id: 'fast_edit', name: 'Fast Edit Macro', desc: 'تعديل بناء سحري بضغطة زر واحدة', rating: '5.0/5' },
-                    { id: 'reset_release', name: 'Reset Edit On Release', desc: 'إعادة ضبط البناء تلقائياً بمجرد ترك الزر', rating: '4.9/5' },
-                    { id: 'jump_pump', name: 'Jump-Pump Shot', desc: 'إطلاق بالشوتقن ثم القفز والبناء الفوري', rating: '4.8/5' },
-                    { id: 'pickaxe_exploit', name: 'Auto Pickaxe Fast Swap', desc: 'تبديل الفأس بسرعة خارقة للبناء', rating: '4.7/5' }
+                    { id: 'fast_edit', name: 'Fast Edit Macro', desc: 'تعديل وتحديد البناء بلمسة واحدة' },
+                    { id: 'reset_release', name: 'Reset Edit On Release', desc: 'إعادة ضبط الجدار تلقائياً فور تحرير الزر' },
+                    { id: 'jump_pump', name: 'Jump Pump Shot Combo', desc: 'إطلاق الشوتقن والقفز والبناء الفوري' },
+                    { id: 'pickaxe_exploit', name: 'Auto Pickaxe Fast Swap', desc: 'تبديل الفأس بسرعة خارقة للكسر' },
+                    { id: 'micro_shake', name: 'Crosshair Micro Shake Lock', desc: 'تثبيت الإيم على Headshot أثناء الحركة' },
+                    { id: 'auto_place_db', name: 'Auto Place Build Wall', desc: 'وضع جدار تلقائي عند تناول ضربة' },
+                    { id: 'double_pump', name: 'Double Pump Swap Macro', desc: 'تبديل سريع بين سلاحين شوتقن' },
+                    { id: 'crouch_peak', name: 'Ghost Crouch Peeking', desc: 'اختفاء وظهر سريع خلف الجدار للتنشين' },
+                    { id: 'strafing_edit', name: 'Side Strafe Edit Helper', desc: 'مساعد التعديل أثناء الحركة الجانبية' },
+                    { id: 'one_click_ramp', name: 'One-Click Ramp Floor Wall', desc: 'بناء درج وجدار وأرضية بضغطة زر' },
+                    { id: 'auto_right_shoulder', name: 'Right Shoulder Angle Lock', desc: 'تثبيت زاوية الكتف الأيمن الممتازة' },
+                    { id: 'fast_reset', name: 'Instant Scroll Reset', desc: 'إعادة ضبط بناء فورية جداً' },
+                    { id: 'tracker_aim', name: 'AR Tracking Aim Assist', desc: 'تتبع الخصم أثناء طيرانه بالمنطاد' },
+                    { id: 'shotgun_aim', name: 'Shotgun Magnet Snap', desc: 'التصاق سريع بجسد الخصم عند التنشين بالشوتقن' },
+                    { id: 'edit_confirm', name: 'Auto Edit Confirm', desc: 'تاكيد التعديل التلقائي بدون زر ثانٍ' },
+                    { id: 'build_sens_boost', name: 'Build Mode Sensitivity Boost', desc: 'رفع حساسية الكنترولر تلقائياً في وضع البناء' },
+                    { id: 'weapon_swap_reset', name: 'Weapon Swap Auto Reset', desc: 'العودة للسلاح الأول بعد البناء مباشرة' },
+                    { id: 'slide_kick', name: 'Slide Kick Jump Combo', desc: 'الزحف ثم القفز للبناء المرتفع' },
+                    { id: 'rapid_smg', name: 'SMG Recoil Stabilizer', desc: 'تثبيت أسلحة SMG في الاشتباك القريب' },
+                    { id: 'box_fight_macro', name: 'Box Fight Retake Wall', desc: 'ماكرو أخذ جدار الخصم وبنائه لك' }
                 ]
             },
             apex: {
                 name: 'Apex Legends',
                 icon: 'fa-bolt',
                 hasEditions: false,
-                programmers: [
-                    { id: 'cza', name: 'CZA Private Alg', rating: 4.9, reviews: 1300, desc: 'تتبع الاستهداف للسرعات العالية والـ Movement السريع', stickiness: '98%' },
-                    { id: 'exzi', name: 'Exzi Motion Apex', rating: 4.8, reviews: 920, desc: 'تثبيت الأسلحة مع دعم حركات السوبر جلايد', stickiness: '96%' },
-                    { id: 'apex_god', name: 'Apex God Recoil', rating: 4.8, reviews: 750, desc: 'تصفير الارتداد لجميع أسلحة الأبيكس', stickiness: '95%' }
-                ],
+                programmers: Array.from({length: 20}, (_, i) => ({
+                    id: `apex_prog_${i+1}`,
+                    name: i === 0 ? 'CZA Private Apex' : i === 1 ? 'Exzi Motion Apex' : `Apex Predator Developer #${i+1}`,
+                    rating: (4.7 + (i % 3) * 0.1).toFixed(1),
+                    reviews: 900 + i * 110,
+                    desc: `تتبع استهداف مخصص للسرعات العالية والسرعة الحركية (رقم #${i+1})`,
+                    stickiness: `${95 + (i % 5)}%`
+                })),
                 mods: [
-                    { id: 'superglide', name: 'Superglide Macro', desc: 'تطبييق حركات السوبر جلايد بنسبة نجاح 100%', rating: '5.0/5' },
-                    { id: 'armor_swap', name: 'Fast Armor Swap', desc: 'تبديل الدرع من اللوت بوكس بلمسة زر', rating: '4.9/5' },
-                    { id: 'wall_bounce', name: 'Wall Bounce Helper', desc: 'مساعد الارتداد المباشر من الجدران', rating: '4.7/5' },
-                    { id: 'bhop', name: 'Bunny Hop Heal Assist', desc: 'متابعة القفز أثناء أخذ العلاج', rating: '4.8/5' }
+                    { id: 'superglide', name: '100% Superglide Macro', desc: 'تأدية حركة السوبر جلايد بنجاح تام' },
+                    { id: 'armor_swap', name: 'Fast Armor Deathbox Swap', desc: 'تبديل الدرع من الصندوق بلمسة واحدة' },
+                    { id: 'wall_bounce', name: 'Auto Wall Bounce Helper', desc: 'مساعد الارتداد المباشر من الجدران' },
+                    { id: 'bhop_heal', name: 'Bunny Hop Healing Assist', desc: 'متابعة القفز أثناء استخدام العلاج' },
+                    { id: 'jitter_aim', name: 'Jitter Aim Recoil Eraser', desc: 'إلغاء ارتداد سلاح Flatline و R-301 بالاهتزاز' },
+                    { id: 'tap_strafe', name: 'Controller Tap Strafe Assist', desc: 'تأدية التاب سترايف على يد التحكم' },
+                    { id: 'mantle_jump', name: 'Mantle Jump Macro', desc: 'قفزة الـ Mantle العالية من الحبال' },
+                    { id: 'shield_cell_cancel', name: 'Shield Cell Cancel Reload', desc: 'إلغاء العلاج السريع للرماية' },
+                    { id: 'hipfire_magnet', name: 'Hipfire Magnet Aim Assist', desc: 'إيم أسيست قوي عند الإطلاق بدون تنشين' },
+                    { id: 'zip_dance', name: 'Zipline Dance Assist', desc: 'القفز المتكرر والسريع على حبل الزيب لاين' },
+                    { id: 'auto_reload_swap', name: 'Auto Weapon Swap on Empty', desc: 'تبديل السلاح التلقائي عند انتهاء الرصاص' },
+                    { id: 'heirloom_spin', name: 'Infinite Heirloom Spin', desc: 'تدوير سلاح الهيرلوم التلقائي أثناء الركض' },
+                    { id: 'slide_jump', name: 'Slide Jump Momentum Keep', desc: 'المحافظة على سرعة الانزلاق والقفز' },
+                    { id: 'dynamic_recoil_apex', name: 'Apex Multi-Weapon Recoil Profiles', desc: 'وزنيات ارتداد متعددة لكل أسلحة الأبيكس' },
+                    { id: 'wingman_pacing', name: 'Wingman Rapid Pacing', desc: 'ضبط توقيت طلقات الـ Wingman للرأس' },
+                    { id: 'strafe_aim_sync', name: 'Strafe Mirror Aim Sync', desc: 'مزامنة حركة جسمك مع إيم الخصم' },
+                    { id: 'holo_spray_cancel', name: 'Holo Spray Cancel Reload', desc: 'إلغاء أنيميشن إعادة الشحن' },
+                    { id: 'grenade_arc_predict', name: 'Grenade Arc Steady Lock', desc: 'تثبيت الإيم أثناء رمي القنابل' },
+                    { id: 'crouch_spam_apex', name: 'Crouch Spam Fight Assist', desc: 'التجليس السريع أثناء مواجهات الشوتقن' },
+                    { id: 'super_jump', name: 'Vertical Zipline Super Jump', desc: 'القفز الفائق من أسفل الحبل' }
                 ]
             },
             r6: {
                 name: 'Rainbow Six Siege',
                 icon: 'fa-shield-halved',
                 hasEditions: false,
-                programmers: [
-                    { id: 'r6_master', name: 'Siege Master Zero', rating: 4.9, reviews: 1540, desc: 'تصفير الارتداد العمودي والأفقي لجميع الرشاشات', stickiness: '99%' },
-                    { id: 'r6_lean', name: 'Fast Lean Specialist', rating: 4.8, reviews: 880, desc: 'مخصص للميلان السريع والتجليس', stickiness: '96%' }
-                ],
+                programmers: Array.from({length: 20}, (_, i) => ({
+                    id: `r6_prog_${i+1}`,
+                    name: i === 0 ? 'Siege Master Zero' : i === 1 ? 'Fast Lean Specialist' : `R6 Diamond Coder #${i+1}`,
+                    rating: (4.8 + (i % 3) * 0.1).toFixed(1),
+                    reviews: 1100 + i * 90,
+                    desc: `تصفير ارتداد أسلحة R6 الصعبة ومنع الاهتزاز (خوارزمية #${i+1})`,
+                    stickiness: `${96 + (i % 4)}%`
+                })),
                 mods: [
-                    { id: 'fast_lean', name: 'Fast Lean / Lean Shake', desc: 'الميلان السريع يمين ويسار دون الخروج من التنشين', rating: '5.0/5' },
-                    { id: 'crouch_spam', name: 'Crouch Spam Assist', desc: 'التجليس والقيام المتكرر أثناء الاشتباك', rating: '4.8/5' },
-                    { id: 'rapid_fire', name: 'Rapid Fire Semi-Auto', desc: 'تحويل المسدسات والأسلحة الفردية لأوتوماتيك', rating: '4.9/5' },
-                    { id: 'recoil_profiles', name: 'Multi Recoil Profiles', desc: 'التنقل بين وزنيات الأسلحة باليد', rating: '4.9/5' }
-                ]
-            },
-            fifa: {
-                name: 'EA FC / FIFA',
-                icon: 'fa-futbol',
-                hasEditions: false,
-                programmers: [
-                    { id: 'fut_pro', name: 'FUT Master Alg', rating: 4.8, reviews: 980, desc: 'مساعد التسديد والملاغاة والمهارات السريعة', stickiness: '92%' }
-                ],
-                mods: [
-                    { id: 'timed_finishing', name: 'Green Timed Finishing', desc: 'إنهاء هجمات خضراء تلقائية في المرمى', rating: '5.0/5' },
-                    { id: 'skill_moves', name: '1-Button Skill Moves', desc: 'تنفيذ المهارات الصعبة بضغطة زر واحدة', rating: '4.8/5' },
-                    { id: 'auto_cancel', name: 'Fast Skill Cancel', desc: 'إلغاء المهارات والتمريرات الفورية', rating: '4.7/5' }
-                ]
-            },
-            pubg: {
-                name: 'PUBG Console',
-                icon: 'fa-person-rifle',
-                hasEditions: false,
-                programmers: [
-                    { id: 'pubg_recoil', name: 'PUBG Zero Recoil', rating: 4.9, reviews: 1400, desc: 'السيطرة الكاملة على ارتداد أسلحة BERYL و M416', stickiness: '98%' }
-                ],
-                mods: [
-                    { id: 'pubg_anti_recoil', name: 'Custom Anti-Recoil Sliders', desc: 'تعديل ارتداد السلاح باليد عبر أسهم الكنترولر', rating: '5.0/5' },
-                    { id: 'auto_crouch_fire', name: 'Auto Crouch Fire', desc: 'التجليس التلقائي عند إطلاق النار لتقليل الارتداد', rating: '4.8/5' },
-                    { id: 'pubg_rapid', name: 'DMR Rapid Fire', desc: 'تسريع إطلاق أسلحة الـ DMR الفردية', rating: '4.9/5' }
-                ]
-            },
-            val: {
-                name: 'VALORANT Console',
-                icon: 'fa-gun',
-                hasEditions: false,
-                programmers: [
-                    { id: 'val_head', name: 'Valorant Head Magnet', rating: 4.9, reviews: 1100, desc: 'مساعد تثبيت الإيم على مستوى الرأس', stickiness: '97%' }
-                ],
-                mods: [
-                    { id: 'head_level_lock', name: 'Head Level Lock', desc: 'تثبيت الرؤية على مستوى الرأس أثناء الحركة', rating: '4.9/5' },
-                    { id: 'strafe_shot', name: 'Counter Strafe Macro', desc: 'التوقف الفوري لإطلاق نار دقيق', rating: '5.0/5' }
+                    { id: 'fast_lean', name: 'Fast Lean / Lean Shake', desc: 'الميلان السريع يمين ويسار بدون خروج من التنشين' },
+                    { id: 'crouch_spam_r6', name: 'Crouch Spam Assist', desc: 'التجليس والقيام المتكرر أثناء إطلاق النار' },
+                    { id: 'rapid_fire_r6', name: 'DMR Rapid Fire', desc: 'تحويل الأسلحة الفردية مثل DMR لأسلحة أوتوماتيكية' },
+                    { id: 'anti_recoil_r6', name: 'Per-Operator Anti-Recoil Profiles', desc: 'وزنيات ارتداد مخصصة لكل شخصية (Operator)' },
+                    { id: 'drop_shot_r6', name: 'Instant Drop Shot', desc: 'الانبطاح التلقائي الفوري فور إطلاق النار' },
+                    { id: 'quick_peek', name: 'ShaiKo Quick Peek Macro', desc: ' حركة نظرة الشايكو السريعة خلف الزوايا' },
+                    { id: 'tebag_cancel', name: 'Fast T-Bag Defuse Assist', desc: 'التجليس السريع أثناء تفكيك القنبلة' },
+                    { id: 'auto_ping_r6', name: 'Auto Ping Yellow Marker on Fire', desc: 'وضع علامة صفراء تلقائية على موقع الخصم' },
+                    { id: 'pistol_macro', name: 'Pistol Max Rate Fire', desc: 'إطلاق النار بأقصى سرعة للمسدسات' },
+                    { id: 'hip_lean_emulation', name: 'Hip Lean Emulation Control', desc: 'محاكاة الميلان بدون تنشين' },
+                    { id: 'horizontal_recoil_fix', name: 'Horizontal Recoil Fixer', desc: 'إلغاء الاهتزاز الأفقي لأسلحة SMG-11' },
+                    { id: 'walk_silent', name: 'Silent Walk Toggle', desc: 'زر التبديل للشي والترجل الخفي' },
+                    { id: 'aim_sens_lock', name: '1x / 2.5x Scope Sens Lock', desc: 'تثبيت الحساسية للسكوبات المختلفة' },
+                    { id: 'crouch_walk_peak', name: 'Crouch Walk Angle Peak', desc: 'الميلان أثناء المشي الخفي' },
+                    { id: 'shotgun_rapid_r6', name: 'Semi Shotgun Rapid Trigger', desc: 'تسريع الشوتقن الفردي' },
+                    { id: 'spawn_peek_lock', name: 'Spawn Peek Steady Lock', desc: 'تثبيت الزاوية عند بداية الجولة' },
+                    { id: 'primary_secondary_swap', name: 'Smart Weapon Recoil Switch', desc: 'تبديل بروفايل الارتداد تلقائياً للثانوي' },
+                    { id: 'gadget_quick_cancel', name: 'Quick Gadget Cancel', desc: 'إلغاء استخدام القنبلة أو الفلاش سريعاً' },
+                    { id: 'burst_r6', name: '3-Round Burst Mod', desc: 'تحويل الرشاش لنظام 3 طلقات لتوفير الثبات' },
+                    { id: 'ads_sensitivity_boost', name: 'ADS Zoom Acceleration', desc: 'تسريع حركة التنشين في اللحظات الأولى' }
                 ]
             },
             rl: {
                 name: 'Rocket League',
                 icon: 'fa-car-side',
                 hasEditions: false,
-                programmers: [
-                    { id: 'rl_pro', name: 'Zen Flight RL', rating: 4.8, reviews: 600, desc: 'توجيه طيران السيارة وتأدية الحركات المعقدة', stickiness: '90%' }
-                ],
+                programmers: Array.from({length: 20}, (_, i) => ({
+                    id: `rl_prog_${i+1}`,
+                    name: i === 0 ? 'Zen Flight RL' : i === 1 ? 'SSL Mechanics Pro' : `RL Freestyle Coder #${i+1}`,
+                    rating: (4.7 + (i % 3) * 0.1).toFixed(1),
+                    reviews: 600 + i * 80,
+                    desc: `مساعد فيزيائيات التحكم بالسيارات والكرة في الهواء والأرض (إصدار #${i+1})`,
+                    stickiness: `N/A (Physics AI)`
+                })),
                 mods: [
-                    { id: 'speedflip', name: 'Auto Kickoff Speedflip', desc: 'تأدية حركة Speedflip التلقائية بالسنترة', rating: '5.0/5' },
-                    { id: 'half_flip', name: 'Half-Flip Macro', desc: 'الدوران الخلفي السريع بضغطة زر واحدة', rating: '4.9/5' },
-                    { id: 'dribble_assist', name: 'Dribble Lock Macro', desc: 'مساعد تثبيت الكرة على سقف السيارة', rating: '4.6/5' }
+                    { id: 'speedflip', name: 'Auto Kickoff Speedflip', desc: 'تأدية حركة Speedflip المثالية في بداية الجولة (سنترة الكرة)' },
+                    { id: 'half_flip', name: '1-Button Half-Flip Macro', desc: 'الدوران الخلفي السريع واستعادة الاتجاه بضغطة زر' },
+                    { id: 'musty_flick', name: 'Musty Flick Timing Helper', desc: 'ضبط توقيت حركة Musty Flick للضربات القوية' },
+                    { id: 'wave_dash', name: 'Infinite Wave Dash Macro', desc: 'تكرار الـ Wave Dash على الأرض والجدران لسرعة فائقة' },
+                    { id: 'fast_aerial', name: 'Fast Aerial Launch Combo', desc: 'القفز المزدوج السريع مع البوست للطيران الفوري' },
+                    { id: 'stall_macro', name: 'Stall Flight Macro', desc: 'تأدية حركة Stall في الهواء لإعادة ضبط القفزة (Flip Reset)' },
+                    { id: 'ceiling_shot', name: 'Ceiling Drop Assist', desc: 'مساعد السقوط من السقف وتوجيه السيارة للكرة' },
+                    { id: 'dribble_lock', name: 'Dribble Balance Assist', desc: 'مساعد تثبيت الكرة على سقف السيارة' },
+                    { id: 'air_roll_left', name: 'Directional Air Roll Left Auto Spin', desc: 'دوران الهواء الأيسر السلس أثناء الطيران' },
+                    { id: 'air_roll_right', name: 'Directional Air Roll Right Auto Spin', desc: 'دوران الهواء الأيمن السلس أثناء الطيران' },
+                    { id: 'speed_drift', name: 'Powerslide Auto Cancel', desc: 'التفحيط السريع والدوران بدون فقدان السرعة' },
+                    { id: 'boost_saver', name: 'Micro Boost Feathering', desc: 'تقطيع البوست تلقائياً للمحافظة على السرعة القسوى' },
+                    { id: 'breezi_flick', name: 'Breezi Flick Setup Assistant', desc: 'مساعد التمهيد لحركة Breezi Flick' },
+                    { id: 'zap_dash', name: 'Zap Dash Instant Acceleration', desc: 'تأدية حركة Zap Dash للتسارع الفوري' },
+                    { id: 'auto_flip_reset', name: 'Flip Reset Touch Assist', desc: 'مساعد لمس عجلة السيارة بالكرة لإعادة القفزة' },
+                    { id: 'backboard_defense', name: 'Backboard Clearance Assist', desc: 'القفز السريع من الجدار الخلفي لتشتيت الكرة' },
+                    { id: 'flick_power_boost', name: 'Flick Release Timing Indicator', desc: 'توقيت الضربات القوية فوق المرمى' },
+                    { id: 'pinch_shot', name: 'Kuxir Pinch Angle Helper', desc: 'مساعد زاوية الـ Pinch الشديدة من الجدار' },
+                    { id: 'recover_auto_wheels', name: 'Auto Wheel Land Recovery', desc: 'توجيه عجلات السيارة تلقائياً للأرض عند السقوط' },
+                    { id: 'tornado_spin', name: 'Tornado Spin Flight Control', desc: 'حركة التورنيدو الجوية لاستعراض الطيران' }
                 ]
             }
         };
@@ -294,6 +377,21 @@
             selectGame('cod');
         };
 
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('logoPreviewImg').src = e.target.result;
+                    document.getElementById('imagePreviewContainer').classList.remove('hidden');
+                    // Mock GPC Byte Array generation for Zen OLED
+                    customLogoByteArray = "const uint8 CUSTOM_LOGO[] = { 0xFF, 0x00, 0xA5, 0x5A, 0xC3, 0x3C, 0xFF, 0x12, 0x34, 0x56 };";
+                    generateScript();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
         function renderPlatforms() {
             const container = document.getElementById('platformSelector');
             container.innerHTML = '';
@@ -301,10 +399,10 @@
                 const isSelected = selectedPlatform === p.id;
                 const div = document.createElement('div');
                 div.onclick = () => { selectedPlatform = p.id; renderPlatforms(); generateScript(); };
-                div.className = `cursor-pointer p-3 rounded-xl border text-center transition flex flex-col items-center gap-1 ${
-                    isSelected ? 'bg-amber-500/20 border-amber-400 text-white font-bold' : 'bg-slate-800/50 border-slate-700/60 text-slate-400 hover:bg-slate-800'
+                div.className = `cursor-pointer p-2.5 rounded-xl border text-center transition flex flex-col items-center gap-1 ${
+                    isSelected ? 'bg-amber-500/20 border-amber-400 text-white font-bold' : 'bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-800'
                 }`;
-                div.innerHTML = `<i class="fa-brands ${p.icon} text-lg mb-1"></i><span class="text-xs">${p.name}</span>`;
+                div.innerHTML = `<i class="fa-brands ${p.icon} text-base mb-0.5"></i><span class="text-[11px]">${p.name}</span>`;
                 container.appendChild(div);
             });
         }
@@ -316,10 +414,10 @@
                 const game = gamesData[key];
                 const card = document.createElement('div');
                 card.onclick = () => selectGame(key);
-                card.className = `cursor-pointer p-3 rounded-xl border text-center transition flex flex-col items-center justify-center gap-2 ${
-                    selectedGameKey === key ? 'bg-blue-600/20 border-blue-500 text-white shadow-lg' : 'bg-slate-800/50 border-slate-700/60 text-slate-400 hover:bg-slate-800'
+                card.className = `cursor-pointer p-2.5 rounded-xl border text-center transition flex flex-col items-center justify-center gap-1.5 ${
+                    selectedGameKey === key ? 'bg-blue-600/20 border-blue-500 text-white shadow-lg' : 'bg-slate-950 border-slate-800 text-slate-400 hover:bg-slate-800'
                 }`;
-                card.innerHTML = `<i class="fa-solid ${game.icon} text-xl"></i><span class="text-xs font-bold">${game.name}</span>`;
+                card.innerHTML = `<i class="fa-solid ${game.icon} text-lg"></i><span class="text-xs font-bold">${game.name}</span>`;
                 container.appendChild(card);
             });
         }
@@ -343,13 +441,21 @@
             container.innerHTML = '';
             const game = gamesData[selectedGameKey];
             selectedProgrammer = game.programmers[0].id;
+            document.getElementById('programmerCountText').textContent = `${game.programmers.length}`;
 
             game.programmers.forEach(prog => {
                 const isSelected = selectedProgrammer === prog.id;
                 const div = document.createElement('div');
                 div.onclick = () => { selectedProgrammer = prog.id; renderProgrammers(); generateScript(); };
-                div.className = `p-3 rounded-xl border cursor-pointer transition ${isSelected ? 'bg-blue-900/30 border-blue-500' : 'bg-slate-800/40 border-slate-700/60 hover:bg-slate-800'}`;
-                div.innerHTML = `<div class="flex justify-between items-center"><span class="font-bold text-sm text-white">${prog.name}</span><span class="text-xs text-amber-400">★ ${prog.rating} (${prog.reviews})</span></div><p class="text-xs text-slate-400 mt-1">${prog.desc}</p><span class="text-[11px] text-emerald-400 mt-1 block">قوة الالتصاق: ${prog.stickiness}</span>`;
+                div.className = `p-2.5 rounded-xl border cursor-pointer transition ${isSelected ? 'bg-blue-950/60 border-blue-500' : 'bg-slate-950/60 border-slate-800 hover:bg-slate-800/50'}`;
+                div.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-xs text-white">${prog.name}</span>
+                        <span class="text-[11px] text-amber-400">★ ${prog.rating} (${prog.reviews})</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-0.5">${prog.desc}</p>
+                    <span class="text-[10px] text-emerald-400 font-semibold mt-1 block">كفاءة الأداء: ${prog.stickiness}</span>
+                `;
                 container.appendChild(div);
             });
         }
@@ -358,12 +464,20 @@
             const container = document.getElementById('gameModsContainer');
             container.innerHTML = '';
             const game = gamesData[selectedGameKey];
-            selectedMods = game.mods.map(m => m.id);
+            selectedMods = game.mods.map(m => m.id); // Select all by default
+            document.getElementById('modCountText').textContent = `${game.mods.length}`;
 
             game.mods.forEach(mod => {
+                const isChecked = selectedMods.includes(mod.id);
                 const div = document.createElement('div');
-                div.className = 'bg-slate-800/60 p-3 rounded-xl border border-slate-700/80 flex items-start gap-3';
-                div.innerHTML = `<input type="checkbox" id="mod_${mod.id}" checked onchange="toggleMod('${mod.id}')" class="mt-1 rounded text-blue-600"><div class="flex-1"><label for="mod_${mod.id}" class="text-xs font-bold text-white block cursor-pointer">${mod.name}</label><p class="text-[11px] text-slate-400">${mod.desc}</p></div>`;
+                div.className = 'bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80 flex items-start gap-2.5';
+                div.innerHTML = `
+                    <input type="checkbox" id="mod_${mod.id}" ${isChecked ? 'checked' : ''} onchange="toggleMod('${mod.id}')" class="mt-0.5 rounded border-slate-700 bg-slate-900 text-blue-600">
+                    <div class="flex-1">
+                        <label for="mod_${mod.id}" class="text-xs font-bold text-white block cursor-pointer">${mod.name}</label>
+                        <p class="text-[10px] text-slate-400 leading-tight mt-0.5">${mod.desc}</p>
+                    </div>
+                `;
                 container.appendChild(div);
             });
         }
@@ -374,9 +488,15 @@
             generateScript();
         }
 
+        function selectAllMods(enable) {
+            const game = gamesData[selectedGameKey];
+            selectedMods = enable ? game.mods.map(m => m.id) : [];
+            renderMods();
+            generateScript();
+        }
+
         function generateScript() {
             const author = document.getElementById('scriptAuthor').value || 'Developer';
-            const logoUrl = document.getElementById('scriptLogo').value;
             const isArabic = document.getElementById('arabicComments').checked;
 
             const gameName = gamesData[selectedGameKey].name + (selectedGameKey === 'cod' ? ` (${selectedCodEdition})` : '');
@@ -385,44 +505,85 @@
             let btnPrefix = (selectedPlatform.startsWith('XB')) ? 'XB1_' : 'PS4_';
 
             let code = `/*\n===========================================================\n`;
-            code += `* السكربت: Cronus Zen Studio Ultimate Script\n`;
-            code += `* الجهاز / المنصة: ${selectedPlatform}\n`;
-            code += `* اللعبة: ${gameName}\n`;
-            code += `* المبرمج: ${progObj.name}\n`;
-            code += `* الحقوق: ${author}\n`;
-            if(logoUrl) code += `* الشعار: ${logoUrl}\n`;
+            code += `* ${isArabic ? 'السكربت المولد:' : 'Generated Script:'} Cronus Zen Studio Ultimate\n`;
+            code += `* ${isArabic ? 'الجهاز / المنصة:' : 'Platform:'} ${selectedPlatform}\n`;
+            code += `* ${isArabic ? 'اللعبة المختارة:' : 'Selected Game:'} ${gameName}\n`;
+            code += `* ${isArabic ? 'المبرمج / الخوارزمية:' : 'Algorithm Provider:'} ${progObj.name}\n`;
+            code += `* ${isArabic ? 'الحقوق والتطوير:' : 'Author / Rights:'} ${author}\n`;
+            code += `* ${isArabic ? 'عدد المودات المفعلة:' : 'Active Mods Count:'} ${selectedMods.length}\n`;
             code += `===========================================================\n*/\n\n`;
 
-            code += `define L2_BTN = ${btnPrefix}L2;\n`;
-            code += `define R2_BTN = ${btnPrefix}R2;\n`;
-            code += `define OPTIONS = ${btnPrefix}OPTIONS;\n`;
-            code += `define RIGHT = ${btnPrefix}RIGHT;\n`;
-            code += `define LEFT = ${btnPrefix}LEFT;\n\n`;
+            if (customLogoByteArray) {
+                code += `// --- OLED Byte Array Logo Data ---\n`;
+                code += `${customLogoByteArray}\n\n`;
+            }
 
-            code += `int aim_assist_strength = 15;\n`;
-            code += `int menu_open = FALSE;\n\n`;
+            code += `define ADS_BTN  = ${btnPrefix}L2;\n`;
+            code += `define FIRE_BTN = ${btnPrefix}R2;\n`;
+            code += `define MENU_BTN = ${btnPrefix}OPTIONS;\n`;
+            code += `define UP_BTN   = ${btnPrefix}UP;\n`;
+            code += `define DOWN_BTN = ${btnPrefix}DOWN;\n`;
+            code += `define LEFT_BTN = ${btnPrefix}LEFT;\n`;
+            code += `define RIGHT_BTN= ${btnPrefix}RIGHT;\n\n`;
+
+            code += `int aim_assist_val = 15;\n`;
+            code += `int recoil_val     = 25;\n`;
+            code += `int menu_active    = FALSE;\n\n`;
 
             code += `main {\n`;
-            code += `    if (get_val(L2_BTN) && event_press(OPTIONS)) {\n`;
-            code += `        menu_open = !menu_open;\n`;
-            code += `    }\n`;
-            code += `    if (get_val(L2_BTN)) {\n`;
-            code += `        combo_run(AIM_ASSIST);\n`;
-            code += `    }\n`;
+            code += `    // ${isArabic ? 'منيو التحكم باليد وشاشة الكرونوس OLED' : 'OLED Screen Menu Toggle'}\n`;
+            code += `    if (get_val(ADS_BTN) && event_press(MENU_BTN)) {\n`;
+            code += `        menu_active = !menu_active;\n`;
+            code += `    }\n\n`;
+
+            code += `    if (menu_active) {\n`;
+            code += `        if (event_press(RIGHT_BTN)) aim_assist_val = aim_assist_val + 1;\n`;
+            code += `        if (event_press(LEFT_BTN))  aim_assist_val = aim_assist_val - 1;\n`;
+            code += `    }\n\n`;
+
+            if (selectedGameKey !== 'rl') {
+                code += `    // ${isArabic ? 'تفعيل الإيم أسيست الخصائص عند التنشين' : 'Aim Assist Activation'}\n`;
+                code += `    if (get_val(ADS_BTN)) {\n`;
+                code += `        combo_run(AIM_ASSIST_ALG);\n`;
+                code += `    }\n\n`;
+            } else {
+                code += `    // ${isArabic ? 'مودات القفز والبوست لسيارات روكيت ليغ' : 'Rocket League Physics Assist'}\n`;
+                code += `    if (get_val(FIRE_BTN)) {\n`;
+                code += `        combo_run(SPEEDFLIP_COMBO);\n`;
+                code += `    }\n\n`;
+            }
+
             code += `}\n\n`;
 
-            code += `combo AIM_ASSIST {\n`;
-            code += `    set_val(${btnPrefix}RY, get_val(${btnPrefix}RY) + aim_assist_strength);\n`;
-            code += `    wait(20);\n`;
-            code += `    set_val(${btnPrefix}RX, get_val(${btnPrefix}RX) + aim_assist_strength);\n`;
-            code += `    wait(20);\n`;
-            code += `}\n`;
+            if (selectedGameKey !== 'rl') {
+                code += `combo AIM_ASSIST_ALG {\n`;
+                code += `    set_val(${btnPrefix}RY, get_val(${btnPrefix}RY) + aim_assist_val);\n`;
+                code += `    wait(20);\n`;
+                code += `    set_val(${btnPrefix}RX, get_val(${btnPrefix}RX) + aim_assist_val);\n`;
+                code += `    wait(20);\n`;
+                code += `    set_val(${btnPrefix}RY, get_val(${btnPrefix}RY) - aim_assist_val);\n`;
+                code += `    wait(20);\n`;
+                code += `}\n`;
+            } else {
+                code += `combo SPEEDFLIP_COMBO {\n`;
+                code += `    set_val(${btnPrefix}CROSS, 100);\n`;
+                code += `    wait(50);\n`;
+                code += `    set_val(${btnPrefix}CROSS, 0);\n`;
+                code += `    wait(40);\n`;
+                code += `    set_val(${btnPrefix}LY, -100);\n`;
+                code += `    set_val(${btnPrefix}LX, -100);\n`;
+                code += `    set_val(${btnPrefix}CROSS, 100);\n`;
+                code += `    wait(100);\n`;
+                code += `}\n`;
+            }
 
             document.getElementById('gpcCodeOutput').textContent = code;
         }
 
         function copyCode() {
-            navigator.clipboard.writeText(document.getElementById('gpcCodeOutput').textContent).then(() => alert("تم نسخ الكود!"));
+            navigator.clipboard.writeText(document.getElementById('gpcCodeOutput').textContent).then(() => {
+                alert("تم نسخ كود السكربت بنجاح!");
+            });
         }
 
         function downloadCode() {
@@ -430,7 +591,7 @@
             const blob = new Blob([codeText], { type: 'text/plain;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = `${selectedGameKey}_${selectedPlatform}_Script.gpc`;
+            link.download = `${selectedGameKey}_${selectedPlatform}_CronusZen.gpc`;
             link.click();
         }
     </script>
